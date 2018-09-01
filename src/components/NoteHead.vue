@@ -1,6 +1,6 @@
 <template>
   <div class="note-head">
-    <input type="text" class="title" :value="title">
+    <input type="text" class="title" placeholder="Write some sticky title." :value="title">
     <!-- TODO: menu button -->
   </div>
 </template>
@@ -18,6 +18,8 @@ export default class NoteHead extends Vue {
 <style scoped>
 .note-head {
   width: 100%;
+  height: 20px;
+  border-bottom: 1px solid black;
 }
 .title {
   text-align: center;

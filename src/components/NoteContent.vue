@@ -1,6 +1,6 @@
 <template>
   <div class="note-content">
-    <textarea name="content" class="content">{{content}}</textarea>
+    <textarea name="content" class="content" placeholder="Write some sticky contents.">{{content}}</textarea>
     <!-- TODO: menu button -->
   </div>
 </template>
@@ -18,7 +18,7 @@ export default class NoteContent extends Vue {
 <style scoped>
 .note-content {
   width: 100%;
-  height: 100%;
+  height: calc(100% - 20px);
 }
 .content {
   width: 100%;

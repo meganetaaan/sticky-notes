@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div class="note">
     <NoteHead :title="title"></NoteHead>
     <NoteContent :content="content"></NoteContent>
   </div>
@@ -24,7 +24,12 @@ export default class Note extends Vue {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.hello {
+.note {
   background-color: pink;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
 }
 </style>
