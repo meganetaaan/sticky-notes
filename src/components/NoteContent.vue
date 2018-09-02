@@ -1,6 +1,6 @@
 <template>
   <div class="note-content">
-    <textarea name="content" class="content" placeholder="Write some sticky contents.">{{content}}</textarea>
+    <textarea name="content" class="content" v-model="content" placeholder="Write some sticky contents."></textarea>
     <!-- TODO: menu button -->
   </div>
 </template>
