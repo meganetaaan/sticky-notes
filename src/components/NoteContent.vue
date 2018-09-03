@@ -27,6 +27,9 @@ export default class NoteContent extends Vue {
   border: none;
   background-color: transparent;
   box-sizing: border-box;
-  padding: 0;
+  padding: 4px;
+}
+.content:focus {
+  outline: none;
 }
 </style>

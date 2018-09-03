@@ -1,6 +1,6 @@
 <template>
-  <div class="note">
-    <NoteHead :title="title"></NoteHead>
+  <div @keydown.alt.78.prevent="add" class="note">
+    <NoteHead v-on:add="add" v-on:remove="remove" :title="title"></NoteHead>
     <NoteContent :content="content"></NoteContent>
   </div>
 </template>
@@ -17,8 +17,28 @@ import NoteContent from './NoteContent.vue';
   },
 })
 export default class Note extends Vue {
-  @Prop() private title!: string;
-  @Prop() private content!: string;
+  private title: string = 'hoge';
+  private content: string = 'fuga';
+
+  private add(n: number) {
+    this.title = this.title + n;
+    const x = window.screenLeft + 50;
+    const y = window.screenTop + 50;
+    const w = 300;
+    const h = 200;
+    const child = window.open('.', '', `left=${x},top=${y},width=${w},height=${h}`);
+    if (child != null) {
+      const el = child.document.querySelector('.note-content');
+      if (el != null) {
+        el.focus();
+      }
+    }
+  }
+
+  private remove() {
+    window.confirm('Delete this note?');
+    window.close();
+  }
 }
 </script>
 
