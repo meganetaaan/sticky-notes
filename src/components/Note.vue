@@ -28,16 +28,18 @@ export default class Note extends Vue {
     const h = 200;
     const child = window.open('.', '', `left=${x},top=${y},width=${w},height=${h}`);
     if (child != null) {
-      const el = child.document.querySelector('.note-content');
+      const el = child.document.querySelector('.note-content>content');
       if (el != null) {
-        el.focus();
+        const input = el as HTMLElement;
+        input.focus();
       }
     }
   }
 
   private remove() {
-    window.confirm('Delete this note?');
-    window.close();
+    if (window.confirm('Delete this note?')) {
+      window.close();
+    }
   }
 }
 </script>
